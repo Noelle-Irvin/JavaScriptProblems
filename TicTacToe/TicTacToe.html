@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TicTacToe</title>
+	<link rel="shortcut icon" href="https://vignette.wikia.nocookie.net/mario/images/8/8b/SMG_GreenLuma.jpg/revision/latest/scale-to-width-down/480?cb=20090125010739">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+		.boardCorner{
+			height:165px;
+			border: 1px groove black;
+			background: "";
+		}
+		.boardSideEdge{
+			height:165px;
+			border-right: 1px groove black;
+			border-left: 1px groove black;
+			background: "";
+		}
+		.boardMiddle{
+			height:165px;
+			background: "";
+		}
+		.board{
+			height:165px;
+			border-top: 1px groove black;
+			border-bottom: 1px groove black;
+			background: "";
+		}
+		.square{
+			text-align: center;
+			color: white;
+			font-size: 125px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class = "container-fluid">
+		<div class = "row">
+			<div class = "col-sm-offset-3 col-sm-6 text-center">
+				<h1>Tic-Tac-Toe</h1>
+				<hr/>
+				<h4>
+				<div id = "message">
+					Welcome to my tic-tac-toe game! Click the green star to begin.
+				</div>
+				</h4>
+				<div id="star">
+				<img src="https://vignette.wikia.nocookie.net/mario/images/8/8b/SMG_GreenLuma.jpg/revision/latest/scale-to-width-down/480?cb=20090125010739" 
+				onclick="showInstructions();"/>
+				</div>
+				<div id="players" style="margin:100px 0px 0px 0px; display:none">
+					<div class="col-sm-4">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRtHcJtypHfb2_G3dzdclmx8cJMYOuO8YDRdDcFb9Jih2LO61pAg"
+						onclick="playerSelection('#FFE53B','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRtHcJtypHfb2_G3dzdclmx8cJMYOuO8YDRdDcFb9Jih2LO61pAg');" />
+					</div>
+					<div class="col-sm-offset-2 col-sm-4">
+						<img src="./SMG_BlueLuma.jpg" style="width:275px; height:275px"
+						onclick="playerSelection('#598AFC', './SMG_BlueLuma.jpg');" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" id="gameBoard" style="display:none">
+			<div class="col-sm-2 text-left">
+				<!-- player 1 score board -->
+				<h3>Player 1</h3>
+				<hr/>
+				<div id="player1Image">
+					<img src="" style="width:75px; height:75px"/>
+				</div>
+				<h4>Score:</h4>
+				<h4><div id = "Player 1"></div></h4>
+			</div>
+			<div class= "col-sm-offset-1 col-sm-6 text-center">
+				<!-- game board -->
+				<div class="col-sm-4 boardCorner square" id="one" onclick="move('one');"></div>
+				<div class="col-sm-4 board square" id="two" onclick="move('two');"></div>
+				<div class="col-sm-4 boardCorner square" id="three" onclick="move('three');">
+					
+				</div>
+				<div class="col-sm-4 boardSideEdge square" id="four" onclick="move('four');"></div>
+				<div class="col-sm-4 boardMiddle square" id="five" onclick="move('five');"></div>
+				<div class="col-sm-4 boardSideEdge square" id="six" onclick="move('six');"></div>
+				<div class="col-sm-4 boardCorner square" id="seven" onclick="move('seven');"></div>
+				<div class="col-sm-4 board square" id="eight" onclick="move('eight');"></div>
+				<div class="col-sm-4 boardCorner square" id="nine" onclick="move('nine');"></div>
+			</div>
+			<div class="col-sm-offset-1 col-sm-2 text-right">
+				<!-- player 2 score Board -->
+				<h3>Player 2</h3>
+				<hr/>
+				<div id="player2Image">
+					<img src="" style="width:75px; height:75px"/>
+				</div>
+				<h4>Score:</h4>
+				<h4><div id = "Player 2"></div></h4>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="./ticTacToe.js"></script>
+</body>
+</html>
